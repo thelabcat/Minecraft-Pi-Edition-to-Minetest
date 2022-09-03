@@ -19,23 +19,25 @@ if in_fn[-4:]!=".dat":
 print("Reading...")
 f=open(in_fn, "rb")
 blocklist=pickle.load(f)
-startvec=pickle.load(f)
-stopvec=pickle.load(f)
+try:
+    startvec=pickle.load(f)
+    stopvec=pickle.load(f)
+    veclist=vector_range(startvec, stopvec)
+except EOFError:
+    veclist=""
+    while len(veclist)!=len(blocklist):
+        startvec=eval("Vector("+input("Enter x, y, z of lowest value corner in Minecraft: ")+")")
+        stopvec=eval("Vector("+input("Enter x, y, z of highest value corner in Minecraft: ")+")")
+        veclist=vector_range(startvec, stopvec)
+        if len(veclist)!=len(blocklist):
+            print("Size mismatch: Vector range is length", len(veclist), "while block list is length", len(blocklist))
+
 f.close()
 
 out_fn=input("Enter path to .we output file: ")
 if out_fn[-3:]!=".we":
     out_fn+=".we"
 
-veclist=vector_range(startvec, stopvec)
-
-##veclist=""
-##while len(veclist)!=len(blocklist):
-##    startvec=eval("Vector("+input("Enter x, y, z of lowest value corner in Minecraft: ")+")")
-##    stopvec=eval("Vector("+input("Enter x, y, z of highest value corner in Minecraft: ")+")")
-##    veclist=vector_range(startvec, stopvec)
-##    if len(veclist)!=len(blocklist):
-##        print("Size mismatch: Vector range is length", len(veclist), "while block list is length", len(blocklist))
 
 
 print("Start vector is", startvec)
