@@ -365,20 +365,20 @@ TRANSLATE = {
     #The first door block is West closed bottom, the last is North open top.
 
     "GLOWING_OBSIDIAN" : "default:obsidian",
-    "NETHER_REACTOR_CORE" : "mesecons_commandblock:commandblock_off"
+    "NETHER_REACTOR_CORE" : "mesecons_commandblock:commandblock_off",
     #Minecraft data on terracotta goes through facing (SWNE)
 
-    "WHEAT" : [("farming:wheat_"+str(x), 3) for x in range(1, 9)]
+    "WHEAT" : [("farming:wheat_"+str(x), 3) for x in range(1, 9)],
     #Minecraft data on wheat takes it through 8 ages (just planted to harvest)
     
-    "LIT_REDSTONE_ORE" : "default:stone_with_mese"
+    "LIT_REDSTONE_ORE" : "default:stone_with_mese",
     
-    "MELON_STEM" : ["default:blueberry_bush_leaves"]*7+["default:blueberry_bush_leaves_with_berries"]
+    "MELON_STEM" : ["default:blueberry_bush_leaves"]*7+["default:blueberry_bush_leaves_with_berries"],
     #Minecraft data on melon stem takes it through 8 ages (just planted to mature)
     
-    "QUARTZ_BLOCK" : "default:silver_sandstone_block"
+    "QUARTZ_BLOCK" : "default:silver_sandstone_block",
     
-    "QUARTZ_STAIRS" : [("moreblocks:stair_silver_sandstone_block", p) for p in (1, 3, 2, 0, 23, 21, 22, 20)],
+    "QUARTZ_STAIRS" : [("moreblocks:stair_silver_sandstone_block", p) for p in (1, 3, 2, 0, 23, 21, 22, 20)]
     #Minecraft stair data works through back-is-facing (EWSN), then upside-down.
     #Turned shapes are not included in the data
     }
